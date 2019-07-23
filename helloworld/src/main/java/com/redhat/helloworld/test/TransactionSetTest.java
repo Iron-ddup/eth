@@ -43,7 +43,7 @@ public class TransactionSetTest {
          * List<Type> inputParameters 入口参数
          * List<TypeReference<?>> outputParameters 出口参数
          */
-        Function function = new Function("set", Arrays.<Type>asList(new Uint256(BigInteger.valueOf(10000))),
+        Function function = new Function("set", Arrays.<Type>asList(new Uint256(BigInteger.valueOf(1))),
                 Collections.<TypeReference<?>>emptyList());
 
         // encode the function

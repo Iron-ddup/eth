@@ -4,6 +4,8 @@ import org.web3j.abi.datatypes.generated.Uint256;
 import org.web3j.protocol.core.RemoteCall;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 
+import java.math.BigInteger;
+
 /**
  * @author littleredhat
  */

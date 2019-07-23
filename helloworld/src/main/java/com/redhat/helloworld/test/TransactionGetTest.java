@@ -47,10 +47,11 @@ public class TransactionGetTest {
                 .ethCall(Transaction.createEthCallTransaction(null, Consts.HELLOWORLD_ADDR, encodedFunction),
                         DefaultBlockParameterName.LATEST)
                 .send();
-
+        System.out.println(response.getValue());
         // get result
         List<Type> result = FunctionReturnDecoder.decode(response.getValue(), function.getOutputParameters());
         int data = Integer.parseInt(result.get(0).getValue().toString());
         System.out.println("data = " + data);
     }
+
 }

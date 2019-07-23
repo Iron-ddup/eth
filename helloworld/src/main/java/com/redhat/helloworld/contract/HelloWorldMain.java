@@ -8,6 +8,8 @@ import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
 
+import java.util.concurrent.CompletableFuture;
+
 /**
  * @author littleredhat
  * <p>
@@ -24,12 +26,12 @@ public class HelloWorldMain {
         System.out.println("getCredentialsAddress : " + credentials.getAddress());
 
         // defaults to http://localhost:8545/
-        Web3j web3j = Web3j.build(new HttpService());
+        Web3j web3j = Web3j.build(new HttpService(" http://127.0.0.1:8545"));
 
         // 部署合约
-        // HelloWorldContract contract = HelloWorldContract.deploy(web3j, credentials,
-        //         Consts.GAS_PRICE, Consts.GAS_LIMIT).send();
-        // System.out.println("getContractAddress : " + contract.getContractAddress());
+//         HelloWorldContract contract = HelloWorldContract.deploy(web3j, credentials,
+//                 Consts.GAS_PRICE, Consts.GAS_LIMIT).send();
+//         System.out.println("getContractAddress : " + contract.getContractAddress());
 
         // 加载合约
         HelloWorldContract contract = HelloWorldContract.load(Consts.HELLOWORLD_ADDR, web3j, credentials,
@@ -38,9 +40,9 @@ public class HelloWorldMain {
 
         ////////// 同步请求方式 //////////
         // set
-        TransactionReceipt transactionReceipt = contract.set(10000).send();
-        System.out.println("waiting..."); // 进入阻塞
-        System.out.println("set : " + transactionReceipt.getTransactionHash());
+//        TransactionReceipt transactionReceipt = contract.set(12121).send();
+//        System.out.println("waiting..."); // 进入阻塞
+//        System.out.println("set : " + transactionReceipt.getTransactionHash());
         // get
         Uint256 result = contract.get().send();
         System.out.println("waiting..."); // 进入阻塞
@@ -48,16 +50,16 @@ public class HelloWorldMain {
 
         ////////// 异步请求方式 //////////
         // set
-        /*
-        CompletableFuture<TransactionReceipt> transactionReceiptAsync = contract.set(10000).sendAsync();
+
+        CompletableFuture<TransactionReceipt> transactionReceiptAsync = contract.set(2).sendAsync();
         System.out.println("waiting..."); // 马上返回
         System.out.println("set : " + transactionReceiptAsync.get().getTransactionHash());
-        */
+
         // get
-        /*
+
         CompletableFuture<Uint256> resultAsync = contract.get().sendAsync();
         System.out.println("waiting..."); // 马上返回
         System.out.println("get : " + resultAsync.get().getValue().intValue());
-        */
+
     }
 }

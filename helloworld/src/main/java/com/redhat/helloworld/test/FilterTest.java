@@ -27,17 +27,17 @@ import java.util.Arrays;
  */
 public class FilterTest {
     // 区块数量
-    private static int blockNumber = 0;
+    private static int blockNumber = 2957;
     // 事务数量
     private static int transactionNumber = 0;
 
     public static void main(String[] args) throws Exception {
         /***** 区块监听 *****/
-        BlockFilters();
+     //   BlockFilters();
         TransactionFilters();
 
         /***** 事务监听 *****/
-        Transaction();
+       Transaction();
     }
 
     // To receive all new blocks as they are added to the blockchain
@@ -89,7 +89,7 @@ public class FilterTest {
          * List<Type> inputParameters 入口参数
          * List<TypeReference<?>> outputParameters 出口参数
          */
-        Function function = new Function("set", Arrays.asList(new Uint256(BigInteger.valueOf(10000))),
+        Function function = new Function("set", Arrays.asList(new Uint256(BigInteger.valueOf(10001))),
                 Arrays.<TypeReference<?>>asList());
 
         // encode the function

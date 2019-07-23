@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class HelloWorldContract extends Contract implements HelloWorldInterface {
 
     // https://remix.ethereum.org/ Compile - Details - WEB3DEPLOY - data
-    private static final String BINARY = "0x6060604052341561000f57600080fd5b60d38061001d6000396000f3006060604052600436106049576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806360fe47b114604e5780636d4ce63c14606e575b600080fd5b3415605857600080fd5b606c60048080359060200190919050506094565b005b3415607857600080fd5b607e609e565b6040518082815260200191505060405180910390f35b8060008190555050565b600080549050905600a165627a7a72305820b287ea3878f6f6cc6e7e3885be10bd9172b2074fbdc32fbfc8f7edd3f683e8d90029";
+    private static final String BINARY = "606060405260a18060106000396000f360606040526000357c01000000000000000000000000000000000000000000000000000000009004806360fe47b11460435780636d4ce63c14605d57603f565b6002565b34600257605b60048080359060200190919050506082565b005b34600257606c60048050506090565b6040518082815260200191505060405180910390f35b806000600050819055505b50565b60006000600050549050609e565b9056";
 
     /**
      * HelloWorld合约
@@ -75,6 +75,13 @@ public class HelloWorldContract extends Contract implements HelloWorldInterface 
         return executeRemoteCallSingleValueReturn(function);
     }
 
+//    public static final String FUNC_GET = "get";
+//    public RemoteCall<BigInteger> get() {
+//        final Function function = new Function(FUNC_GET,
+//                Arrays.<Type>asList(),
+//                Arrays.<TypeReference<?>>asList(new TypeReference<Uint256>() {}));
+//        return executeRemoteCallSingleValueReturn(function, BigInteger.class);
+//    }
     /**
      * set
      */
