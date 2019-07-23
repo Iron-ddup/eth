@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Ethereum.iml" filepath="$PROJECT_DIR$/.idea/Ethereum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloworld/helloworld.iml" filepath="$PROJECT_DIR$/helloworld/helloworld.iml" />
     </modules>
   </component>
 </project>
