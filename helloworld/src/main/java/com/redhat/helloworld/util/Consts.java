@@ -30,7 +30,7 @@ public class Consts {
     // GAS价格
     public static BigInteger GAS_PRICE = BigInteger.valueOf(20_000_000_000L);
     // GAS上限
-    public static BigInteger GAS_LIMIT = BigInteger.valueOf(4_300_000L);
+    public static BigInteger GAS_LIMIT = BigInteger.valueOf(7_300_000L);
 
     // 钱包密码
     public static String PASSWORD = p.getProperty("password");
@@ -40,4 +40,5 @@ public class Consts {
     public static String DIRECTORY = p.getProperty("directory");
     // 合约地址
     public static String HELLOWORLD_ADDR = p.getProperty("helloworldAddr");
+    public static String OK_ADDR = p.getProperty("okAddr");
 }
